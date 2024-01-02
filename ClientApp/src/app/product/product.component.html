@@ -1,0 +1,36 @@
+<h2 class="text-primary border-bottom">
+    All Products
+</h2>
+<br>
+<a class="btn btn-sm btn-success float-end" routerLink="/add-product">Add Product</a>
+<br>
+<div *ngIf="products && products.length > 0; else noRecords">
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.email}}</td>
+                <td>{{product.address}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" [routerLink]="['/edit-product', product.id]">Edit</a> |
+                    <a class="btn btn-danger btn-sm" href="javascript:void(0)"
+                        (click)="deleteProduct(product.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #noRecords>
+    <div class="alert alert-info mt-4">
+        No products exist.
+    </div>
+</ng-template>
+<br>

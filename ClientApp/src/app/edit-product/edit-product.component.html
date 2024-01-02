@@ -1,0 +1,24 @@
+<h3>Update Product</h3>
+<div class="col-md-4">
+    <div class="row">
+        <form (submit)="edit()">
+            <input type="hidden" [(ngModel)]="product.id" />
+            <div class="mb-1">
+                <label>Name</label>
+                <input class="form-control" type="text" name="name" [(ngModel)]="product.name" required />
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label>Email</label>
+                <input class="form-control" type="email" name="email" [(ngModel)]="product.email" required />
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label>Address</label>
+                <textarea class="form-control" rows="3" name="address" [(ngModel)]="product.address"></textarea>
+                <span class="text-danger"></span>
+            </div>
+            <input type="submit" value="Update" class="btn btn-success btn-sm">
+        </form>
+    </div>
+</div>
