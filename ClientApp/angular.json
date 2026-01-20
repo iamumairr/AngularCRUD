@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "AngularCRUD"
+  "defaultProject": "AngularCRUD",
+  "cli": {
+    "analytics": false
+  }
 }
